@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:orientation="vertical"
+android:background="@color/white"
+    style="@style/Theme.AppCompat.Light.DarkActionBar"
+    >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/a4"
+    >
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/recycler_appbar"
+        android:layout_alignParentTop="true"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:contentInsetStart="0dp"
+
+            >
+
+
+            <Button
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#00ff0000"
+                android:text="Toolbar Title"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                ></Button>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</RelativeLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/a4"
+    android:id="@+id/a1"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    </TextView>
+</LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mRecyclerView"
+android:background="@color/white"
+android:layout_below="@+id/a1"
+        >
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <TextView
+        android:id="@+id/recycler_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="fefef"
+        android:layout_below="@+id/mRecyclerView"
+        >
+
+    </TextView>
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:elevation="20dp"
+        android:background="@color/white"
+
+
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_main_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="20dp"
+
+            >
+
+
+            <Button
+                android:id="@+id/toolbar_title_main_recycler"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="left"
+                android:background="@drawable/homeicon"
+
+
+                ></Button>
+
+
+
+
+
+            <Button
+                android:id="@+id/main_write_recycler"
+
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/main_toolbar_circle"
+
+                ></Button>
+
+            <Button
+                android:id="@+id/toolbar_title_person_recycler"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:background="@drawable/person_icon"
+                android:layout_marginRight="15dp"
+
+                ></Button>
+
+
+            <Button
+
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="55dp"
+                android:background="@drawable/alert_icon"
+
+                ></Button>
+
+            <Button
+                android:id="@+id/toolbar_title_suggestion_recycler"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+
+                android:background="@drawable/suggestion_cion"
+                android:layout_marginLeft="65dp"
+                android:layout_gravity="left"
+
+                ></Button>
+
+
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+</RelativeLayout>

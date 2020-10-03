@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:background="@color/white"
+    android:id="@+id/wewe">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+<!--
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/teabackground">
+
+    </FrameLayout>-->
+
+
+
+<!--    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha=".4"
+        android:background="@drawable/background_fade">
+
+    </FrameLayout>-->
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="100dp"
+android:layout_centerHorizontal="true"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:background="@drawable/circledraw"
+
+
+        />
+
+
+
+</LinearLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+
+
+android:paddingTop="200dp"
+        >
+
+
+        <EditText
+            android:id="@+id/et_id"
+            style="@style/Font_family_light"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_right_16"
+            android:layout_marginTop="@dimen/margin_top_8"
+            android:layout_marginRight="@dimen/margin_right_16"
+            android:layout_marginBottom="@dimen/margin_top_8"
+            android:background="@drawable/edit_style"
+            android:drawableLeft="@drawable/ic_person"
+            android:drawablePadding="@dimen/padding_16"
+            android:hint="User Name"
+            android:inputType="text"
+            android:maxLength="30"
+            android:maxLines="1"
+            android:padding="@dimen/padding_16"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray"
+            android:textSize="@dimen/text_20"></EditText>
+
+
+        <EditText
+            android:id="@+id/et_pass"
+            android:textSize="@dimen/text_20"
+            style="@style/Font_family_light"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_right_16"
+            android:layout_marginTop="@dimen/margin_top_8"
+            android:layout_marginRight="@dimen/margin_right_16"
+            android:layout_marginBottom="@dimen/margin_top_8"
+            android:background="@drawable/edit_style"
+            android:drawableLeft="@drawable/password"
+            android:drawablePadding="@dimen/padding_16"
+            android:hint="User Password"
+            android:inputType="textPassword"
+            android:maxLength="30"
+            android:maxLines="1"
+            android:padding="@dimen/padding_16"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray"
+
+            ></EditText>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible">
+
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/Font_family_regular"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_right_16"
+            android:layout_marginTop="@dimen/margin_top_8"
+            android:layout_marginRight="@dimen/margin_right_16"
+            android:layout_marginBottom="@dimen/margin_top_8"
+            android:background="@drawable/gradient_green"
+            android:text="LOGIN"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_20"
+            ></Button>
+
+        <Button
+
+            android:id="@+id/btn_register"
+            style="@style/Font_family_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_right_16"
+            android:layout_marginTop="@dimen/margin_top_8"
+            android:layout_marginRight="@dimen/margin_right_16"
+            android:layout_marginBottom="@dimen/margin_top_8"
+            android:background="#00ff0000"
+            android:text="KAKAO ACCOUNT"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_20">
+
+        </Button>
+
+
+        <com.kakao.usermgmt.LoginButton
+
+            android:id="@+id/btn_custom_login"
+android:visibility="gone"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:text="카카오 로그인" />
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+
+
+
+</LinearLayout>
+

@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="lets.go.lets_go_together.MainActivity">
+
+
+
+    <RelativeLayout
+        android:id="@+id/main_socondlayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/main_first_layout"
+
+        android:orientation="horizontal">
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/main_myinfo"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/red_style"
+        android:elevation="20dp"
+
+        >
+
+
+        <RelativeLayout
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/with_logo"
+                ></ImageView>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentRight="true"
+
+
+            >
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:background="@color/white"
+                android:text="logout"
+                android:textColor="@color/gray"
+                android:textSize="10dp"
+        ></Button>
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/loginID"
+            android:textColor="@color/black"
+            android:layout_centerInParent="true"
+
+            android:textStyle="bold"
+            android:textSize="@dimen/text_20"
+
+
+            >
+
+
+        </TextView>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/loginID"
+            android:orientation="horizontal"
+            android:id="@+id/post_comment_layout"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/main_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="5"
+                    style="@style/Font_family_light"
+                    >
+
+                </Button>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="Posts"
+
+                    >
+
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <Button
+                    android:id="@+id/main_comment_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="8"
+                    style="@style/Font_family_light"
+                    >
+
+                </Button>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="Comments"
+
+                    >
+
+
+                </TextView>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/aaaaaa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_myinfo"
+        android:orientation="vertical"
+
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Category"
+
+            android:paddingLeft="20dp"
+            ></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            ></TextView>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aaaaaa"
+        android:orientation="vertical"
+        android:layout_above="@+id/wwww"
+        android:background="@color/white"
+
+        >
+
+        <include layout="@layout/category_field"></include>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/wwww"
+        android:layout_alignParentBottom="true"
+        android:elevation="20dp"
+        android:background="@color/white"
+
+
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="20dp"
+
+            >
+
+
+            <Button
+                android:id="@+id/toolbar_title_main"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="left"
+                android:background="@drawable/homeicon"
+
+
+                ></Button>
+
+
+
+
+
+
+
+
+
+            <Button
+                android:id="@+id/main_write"
+
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/main_toolbar_circle"
+
+                ></Button>
+
+            <Button
+                android:id="@+id/toolbar_title_person"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:background="@drawable/person_icon"
+                android:layout_marginRight="15dp"
+
+                ></Button>
+
+
+            <Button
+
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="55dp"
+                android:background="@drawable/alert_icon"
+
+                ></Button>
+
+            <Button
+                android:id="@+id/toolbar_title_suggestion"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+
+                android:background="@drawable/suggestion_cion"
+                android:layout_marginLeft="65dp"
+                android:layout_gravity="left"
+
+                ></Button>
+
+
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
+
+
+
+
+
+

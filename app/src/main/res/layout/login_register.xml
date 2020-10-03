@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+android:layout_weight="1"
+        >
+
+        <TextView
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+android:text="Create Account"
+            ></TextView>
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+android:layout_weight="0.5"
+    android:paddingTop="20dp"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이름">
+
+
+
+    </TextView>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/kakaoname"
+        android:hint="이름"
+        android:enabled="false"
+        >
+
+
+    </EditText>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아이디"
+        ></TextView>
+
+    <EditText
+        android:id="@+id/et_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="id"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="패스워드"
+        ></TextView>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="pw"
+        android:id="@+id/et_pass"
+        ></EditText>
+
+
+
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:layout_weight="1"
+    >
+
+    <Button
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+
+        android:id="@+id/btn_register"
+        style="@style/Font_family_regular"
+
+        android:layout_marginLeft="@dimen/margin_right_16"
+        android:layout_marginTop="@dimen/margin_top_8"
+        android:layout_marginRight="@dimen/margin_right_16"
+        android:layout_marginBottom="@dimen/margin_top_8"
+        android:background="@drawable/gradient_green"
+        android:text="Create New Account"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_16"></Button>
+
+
+
+</LinearLayout>
+
+
+</LinearLayout>

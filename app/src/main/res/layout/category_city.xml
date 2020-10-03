@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="4dp"
+
+    tools:context="lets.go.lets_go_together.category.category_city_activity">
+    <ExpandableListView
+        android:id="@+id/expendableList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+        android:divider="@color/white"
+        android:dividerHeight="0.5dp"
+        android:groupIndicator="@null"
+        android:childDivider="@color/white"
+        style="@style/Font_family_light"
+        android:childIndicator="@color/black"
+        />
+</RelativeLayout>

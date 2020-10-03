@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="lets.go.lets_go_together">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <application
+
+
+
+
+        android:name="lets.go.lets_go_together.App"
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:icon="@drawable/applogo"
+        android:label="같이하자"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+
+        <meta-data
+
+            android:name="com.kakao.sdk.AppKey"
+
+            android:value="@string/kakao_app_key" />
+
+
+
+        <activity android:name="lets.go.lets_go_together.category.category_city_activity"></activity>
+        <activity android:name=".my_comment_list"></activity>
+        <activity android:name="lets.go.lets_go_together.category.category_field"></activity>
+
+            <activity android:name=".register_activity"></activity>
+        <activity android:name="lets.go.lets_go_together.notice_board"></activity>
+
+<activity android:name=".profile"></activity>
+<activity android:name="lets.go.lets_go_together.boardwrite"></activity>
+
+        <activity android:name=".recycler.recycler_view"></activity>
+
+        <activity android:name="lets.go.lets_go_together.MainActivity"></activity>
+        <activity android:name="lets.go.lets_go_together.login.login_activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="lets.go.lets_go_together.MyFireBaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+</manifest>

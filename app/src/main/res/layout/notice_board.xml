@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+android:id="@+id/e1"
+        >
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:id="@+id/recycler_appbar"
+            android:layout_alignParentTop="true"
+            >
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_noticeboard"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                app:contentInsetStart="0dp"
+
+                >
+
+
+                <Button
+                    android:id="@+id/toolbar_title_noticeboard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#00ff0000"
+                    android:text="Toolbar Title"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    ></Button>
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/e1"
+        android:id="@+id/e2"
+        >
+
+        <TextView
+            android:id="@+id/notice_board_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="번호"
+            android:visibility="gone"
+            >
+
+        </TextView>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    >
+
+
+</Button>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notice_board_name"
+        android:hint="이름"
+
+        >
+
+
+    </TextView>
+
+</LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+      android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+
+        >
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:text="수정"
+            android:id="@+id/notice_board_update_button"
+            android:background="@drawable/notice_board_edit"
+            android:textColor="	#717171"
+            android:layout_marginRight="5dp"
+            android:textSize="10dp"
+            ></Button>
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:text="삭제"
+            android:id="@+id/notice_board_delete_button"
+            android:background="@drawable/notice_board_edit"
+            android:textColor="#717171"
+            android:textSize="10dp"
+            ></Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수정완료"
+            android:id="@+id/notice_board_update_send"
+            android:visibility="gone"
+            android:background="@drawable/notice_board_edit"
+            >
+
+
+
+        </Button>
+    </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:layout_below="@+id/e2"
+        android:id="@+id/e3"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/gyeongbuk"
+            android:hint="지역"
+
+            >
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:layout_below="@+id/e3"
+        android:id="@+id/e4"
+        >
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제목"
+            android:id="@+id/notice_board_title"
+            android:enabled="false"
+            ></EditText>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/e4"
+        android:id="@+id/e5"
+        >
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내용"
+            android:id="@+id/notice_board_content"
+            android:enabled="false"
+            ></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+android:orientation="vertical"
+android:layout_below="@+id/e5"
+        >
+
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/coment_listview"
+        ></androidx.recyclerview.widget.RecyclerView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="익명체크"
+
+            ></Button>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/comment_write"
+            android:text="댓글쓰기"
+            >
+
+        </EditText>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/comment_write_button"
+            android:text="전송"
+            >
+
+        </Button>
+    </LinearLayout>
+
+</RelativeLayout>

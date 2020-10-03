@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+
+    >
+
+<TextView
+    android:id="@+id/recyclerView_title"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+android:visibility="invisible"
+    tools:text="제목"
+
+    />
+    <TextView
+        android:id="@+id/recyclerView_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="지역"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+android:layout_marginTop="10dp"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/recyclerView_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="지역"
+        android:layout_marginTop="5dp"
+        ></TextView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="10dp"
+    >
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="5 분전   |"
+
+        ></TextView>
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="   최지웅"
+        ></TextView>
+
+</LinearLayout>
+</LinearLayout>
