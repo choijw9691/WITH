@@ -20,6 +20,18 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.security.MessageDigest
 import java.util.ArrayList
 import android.widget.Toast
+import jxl.read.biff.BiffException
+import jxl.Sheet
+import jxl.Workbook
+
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import java.io.IOException
+
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 
 class MainActivity :AppCompatActivity() {
@@ -27,51 +39,57 @@ class MainActivity :AppCompatActivity() {
     internal var adapter: ExpandableListAdapter? = null
     internal var titleList: List<String>? = null
 
+    val listData = LinkedHashMap<String, List<String>>()
+    val micromaxMobiles = ArrayList<String>()
+    val redmiMobiles = ArrayList<String>()
+    val appleMobiles = ArrayList<String>()
+    val samsungMobiles = ArrayList<String>()
+    val counseling = ArrayList<String>()
 
     private var mContext: Context? = null
+
+
     val data: LinkedHashMap<String, List<String>>
-        get() {
+    get() {
 
-            val listData = LinkedHashMap<String, List<String>>()
+        micromaxMobiles.add("토익")
+        micromaxMobiles.add("토플")
+        micromaxMobiles.add("자격증")
+        micromaxMobiles.add("중국어")
+        micromaxMobiles.add("일어")
+        micromaxMobiles.add("기타")
 
+        redmiMobiles.add("헬스")
+        redmiMobiles.add("축구")
+        redmiMobiles.add("농구")
+        redmiMobiles.add("테니스")
+        redmiMobiles.add("탁구")
 
-            val micromaxMobiles = ArrayList<String>()
-            micromaxMobiles.add("토익")
-            micromaxMobiles.add("토플")
-            micromaxMobiles.add("자격증")
-            micromaxMobiles.add("중국어")
-            micromaxMobiles.add("일어")
-            micromaxMobiles.add("기타")
-            val redmiMobiles = ArrayList<String>()
-            redmiMobiles.add("헬스")
-            redmiMobiles.add("축구")
-            redmiMobiles.add("농구")
-            redmiMobiles.add("테니스")
-            redmiMobiles.add("탁구")
+        redmiMobiles.add("기타")
 
-            redmiMobiles.add("기타")
-            val appleMobiles = ArrayList<String>()
-            appleMobiles.add("롤")
-            appleMobiles.add("배그")
-            appleMobiles.add("서든")
-            appleMobiles.add("피파")
-            appleMobiles.add("스타")
-            appleMobiles.add("카트")
-            appleMobiles.add("기타")
-            val samsungMobiles = ArrayList<String>()
-            samsungMobiles.add("기타1")
+        appleMobiles.add("롤")
+        appleMobiles.add("배그")
+        appleMobiles.add("서든")
+        appleMobiles.add("피파")
+        appleMobiles.add("스타")
+        appleMobiles.add("카트")
+        appleMobiles.add("기타")
+
+        samsungMobiles.add("기타1")
 
 
-            val counseling = ArrayList<String>()
-counseling.add("고민상담")
 
-            listData["게임"] = appleMobiles
-            listData["공부"] = micromaxMobiles
-            listData["운동"] = redmiMobiles
-            listData["고민상담"]=counseling
-            listData["기타"] = samsungMobiles
-            return listData
-        }
+        counseling.add("고민상담")
+
+        listData["게임"] = appleMobiles
+        listData["공부"] = micromaxMobiles
+        listData["운동"] = redmiMobiles
+        listData["고민상담"]=counseling
+        listData["기타"] = samsungMobiles
+        return listData
+    }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,8 +99,7 @@ counseling.add("고민상담")
 
 
 
-
-            // 1. 툴바 사용 설정
+        // 1. 툴바 사용 설정
             setSupportActionBar(toolbar_main)
 
             // 2. 툴바 왼쪽 버튼 설정

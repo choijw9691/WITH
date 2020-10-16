@@ -76,14 +76,9 @@ android:id="@+id/e1"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     >
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-
-    >
 
 
-</Button>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -110,11 +105,12 @@ android:id="@+id/e1"
         >
 
         <Button
+
+            android:id="@+id/notice_board_update_button"
             android:layout_width="60dp"
             android:layout_height="30dp"
             android:layout_gravity="right"
             android:text="수정"
-            android:id="@+id/notice_board_update_button"
             android:background="@drawable/notice_board_edit"
             android:textColor="	#717171"
             android:layout_marginRight="5dp"
@@ -210,6 +206,8 @@ android:layout_below="@+id/e5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/coment_listview"
+
+
         ></androidx.recyclerview.widget.RecyclerView>
 
 
@@ -225,7 +223,8 @@ android:layout_alignParentBottom="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="익명체크"
-
+            android:background="@drawable/notice_board_edit"
+            android:textColor="	#717171"
             ></Button>
 
         <EditText
@@ -242,6 +241,8 @@ android:layout_alignParentBottom="true"
             android:layout_height="wrap_content"
             android:id="@+id/comment_write_button"
             android:text="전송"
+            android:background="@drawable/notice_board_edit"
+            android:textColor="	#717171"
             >
 
         </Button>

@@ -26,6 +26,17 @@ import lets.go.lets_go_together.staticclass.Companion.update
 import kotlinx.android.synthetic.main.notice_board.*
 import lets.go.lets_go_together.comment.coment_adapter
 import java.util.HashMap
+import android.widget.ArrayAdapter
+
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
+
+
 
 
 class notice_board : AppCompatActivity() {
@@ -76,6 +87,11 @@ class notice_board : AppCompatActivity() {
 
 
 
+
+
+
+
+
         var board_num = intent.getStringExtra("게시판번호")
 
 
@@ -83,6 +99,12 @@ class notice_board : AppCompatActivity() {
 
             board_num= intent.getStringExtra("messageBody").toString()
         }
+
+
+        comment_read(board_num)
+
+
+
 
 
 
@@ -100,74 +122,10 @@ class notice_board : AppCompatActivity() {
                     val success = jsonObject.getBoolean("success")
                     if (success) {
 
-                   /*     val map1: HashMap<String, String>
 
-
-                        map1 = HashMap()
-                        map1.put("board_num", board_num);
-
-                        val queue1 = Volley.newRequestQueue(this)
-
-                        val listner1 = Response.Listener<JSONArray> { response ->
-
-
-                            try {
-
-                                //  recycler_text.setText(staticclass.study + staticclass.gyeongbuk + staticclass.gumi + staticclass.songjung + staticclass.toeic)
-
-
-                                for (i in 0..response.length() - 1) {
-
-                                    var jsonObject: JSONObject = response.getJSONObject(i)
-
-                                    namearray.add(i, jsonObject.getString("coment_name"))
-                                    contentarray.add(i, jsonObject.getString("coment_content"))
-                                    comment_num.add(i, jsonObject.getString("comment_num"))
-                                    recyclerarray.add(
-                                        i,
-                                        lets.go.lets_go_together.comment.coment_detail(
-                                            namearray.get(i),
-                                            contentarray.get(i),
-                                            comment_num.get(i)
-                                        )
-                                    )
-                                }
-
-
-                                //   recyclerView_Text.setText(jsonObject.toString())
-
-
-                                val mAdapter = coment_adapter(
-                                    this, recyclerarray
-                                )
-                                coment_listview.adapter = mAdapter
-
-
-                                val lm = LinearLayoutManager(this)
-                                coment_listview.layoutManager = lm
-                                coment_listview.setHasFixedSize(true)
-
-
-                            } catch (e: JSONException) {
-                                e.printStackTrace()
-                            }
-                        }
-                        val errorListener1 = Response.ErrorListener { "JJI" }
-                        // queue에 Request를 추가해준다.
-
-                        val CustomJsonRequest1 =
-                            lets.go.lets_go_together.recycler.CustomJsonRequest(
-                                Request.Method.POST, "http://jiwoungftp.dothome.co.kr/comment_recycler.php",
-                                map1
-                                , listner1, errorListener1
-                            )
-                        queue1.add(CustomJsonRequest1)*/
-
-
-
-                    //    Toast.makeText(applicationContext, "글쓰기등록 성공", Toast.LENGTH_LONG).show()
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                       val responseListener = Response.Listener<String> { response ->
+                      comment_read(board_num)
+                        coment_listview.adapter?.notifyDataSetChanged()
+                        val responseListener = Response.Listener<String> { response ->
                             try {
 
                                 val jsonObject = JSONObject(response)
@@ -237,71 +195,18 @@ class notice_board : AppCompatActivity() {
          //   startActivity(intent)
             //finish()
 
+
         }
 
 
-        val map1: HashMap<String, String>
+/*        val map1: HashMap<String, String>
 
 
         map1 = HashMap()
-        map1.put("board_num", board_num);
+        map1.put("board_num", board_num);*/
 
-        val queue1 = Volley.newRequestQueue(this)
+      //  val queue1 = Volley.newRequestQueue(this)
 
-        val listner1 = Response.Listener<JSONArray> { response ->
-
-
-            try {
-
-                //  recycler_text.setText(staticclass.study + staticclass.gyeongbuk + staticclass.gumi + staticclass.songjung + staticclass.toeic)
-
-
-                for (i in 0..response.length() - 1) {
-
-                    var jsonObject: JSONObject = response.getJSONObject(i)
-
-                    namearray.add(i, jsonObject.getString("coment_name"))
-                    contentarray.add(i, jsonObject.getString("coment_content"))
-                    comment_num.add(i, jsonObject.getString("comment_num"))
-                    recyclerarray.add(
-                        i,
-                        lets.go.lets_go_together.comment.coment_detail(
-                            namearray.get(i),
-                            contentarray.get(i),
-                            comment_num.get(i)
-                        )
-                    )
-                }
-
-
-                //   recyclerView_Text.setText(jsonObject.toString())
-
-
-                val mAdapter = lets.go.lets_go_together.comment.coment_adapter(
-                    this, recyclerarray
-                )
-                coment_listview.adapter = mAdapter
-
-
-                val lm = LinearLayoutManager(this)
-                coment_listview.layoutManager = lm
-                coment_listview.setHasFixedSize(true)
-
-
-            } catch (e: JSONException) {
-                e.printStackTrace()
-            }
-        }
-        val errorListener1 = Response.ErrorListener { "JJI" }
-        // queue에 Request를 추가해준다.
-
-        val CustomJsonRequest1 =
-            lets.go.lets_go_together.recycler.CustomJsonRequest(
-                Request.Method.POST, "http://jiwoungftp.dothome.co.kr/comment_recycler.php",
-                map1
-                , listner1, errorListener1
-            )
-        queue1.add(CustomJsonRequest1)
 
 
 /*
@@ -499,6 +404,90 @@ var jsoninfo:String=jsonObject.toString()
 
 
     }
+
+
+
+    fun comment_read(board_num:String){
+
+        recyclerarray = ArrayList<lets.go.lets_go_together.comment.coment_detail>()
+
+        val mAdapter = lets.go.lets_go_together.comment.coment_adapter(
+            this, recyclerarray
+        )
+        coment_listview.adapter = mAdapter
+
+
+        val lm = LinearLayoutManager(this)
+        coment_listview.layoutManager = lm
+        coment_listview.setHasFixedSize(true)
+
+
+
+
+        val map1: HashMap<String, String>
+
+
+        map1 = HashMap()
+        map1.put("board_num", board_num)
+
+        val queue1 = Volley.newRequestQueue(this)
+        val listner1 = Response.Listener<JSONArray> { response ->
+
+
+            try {
+
+                //  recycler_text.setText(staticclass.study + staticclass.gyeongbuk + staticclass.gumi + staticclass.songjung + staticclass.toeic)
+
+                for (i in 0..response.length() - 1) {
+
+                    var jsonObject: JSONObject = response.getJSONObject(i)
+
+                    namearray.add(i, jsonObject.getString("coment_name"))
+                    contentarray.add(i, jsonObject.getString("coment_content"))
+                    comment_num.add(i, jsonObject.getString("comment_num"))
+                    recyclerarray.add(
+                        i,
+                        lets.go.lets_go_together.comment.coment_detail(
+                            namearray.get(i),
+                            contentarray.get(i),
+                            comment_num.get(i)
+                        )
+                    )
+                }
+
+
+                //   recyclerView_Text.setText(jsonObject.toString())
+
+
+                coment_listview.adapter?.notifyDataSetChanged()
+
+
+
+
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+        }
+
+
+
+        val errorListener1 = Response.ErrorListener { "JJI" }
+        // queue에 Request를 추가해준다.
+
+        val CustomJsonRequest1 =
+            lets.go.lets_go_together.recycler.CustomJsonRequest(
+                Request.Method.POST, "http://jiwoungftp.dothome.co.kr/comment_recycler.php",
+                map1
+                , listner1, errorListener1
+            )
+        queue1.add(CustomJsonRequest1)
+
+
+
+    }
+
+
+
 
     // 3.툴바 메뉴 버튼을 설정
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

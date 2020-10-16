@@ -32,19 +32,19 @@ class expandable_third_adapter(
   */
     private lateinit var context: Context
 
-    lateinit var data: List<LinkedHashMap<String, Array<String>>>
+    lateinit var data: List<LinkedHashMap<String, ArrayList<String>>>
 
-    lateinit var parentHeaders: Array<String>
+    lateinit var parentHeaders: ArrayList<String>
 
 
-    lateinit var secondLevel: List<Array<String>>
+    lateinit var secondLevel: List<ArrayList<String>>
 
 
     constructor(
         context: Context,
-        parentHeader: Array<String>,
-        secondLevel: List<Array<String>>,
-        data: List<LinkedHashMap<String, Array<String>>>
+        parentHeader: ArrayList<String>,
+        secondLevel: List<ArrayList<String>>,
+        data: List<LinkedHashMap<String, ArrayList<String>>>
     ) : this() {
         this.context = context
 
@@ -127,8 +127,8 @@ class expandable_third_adapter(
         val headers = secondLevel[groupPosition]
 
 
-        val childData = ArrayList<Array<String>>()
-        val secondLevelData: HashMap<String, Array<String>> = data[groupPosition]
+        val childData = ArrayList<ArrayList<String>>()
+        val secondLevelData: HashMap<String, ArrayList<String>> = data[groupPosition]
 
         for (key in secondLevelData.keys) {
 
@@ -187,7 +187,7 @@ class expandable_third_adapter(
             if (staticclass.choice == "2") {
                 val intent = Intent(context, recycler_view::class.java)
                 context.startActivity(intent)
-                choice=""
+
             }
 
             return@setOnChildClickListener false

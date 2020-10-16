@@ -16,11 +16,11 @@ public class expandable_second_adapter(
 
    private lateinit var context:Context
 
-   lateinit var data: List<Array<String>>
+   lateinit var data: List<ArrayList<String>>
 
-  lateinit var headers: Array<String>
+  lateinit var headers: ArrayList<String>
 
-    constructor(context:Context,headers:Array<String>,data: List<Array<String>>) : this() {
+    constructor(context:Context,headers:ArrayList<String>,data: List<ArrayList<String>>) : this() {
         this.context = context
         this.data = data
         this.headers = headers
@@ -66,7 +66,7 @@ public class expandable_second_adapter(
 
     override fun getChild(groupPosition: Int, childPosition: Int): Any {
 
-        val childData: Array<String>
+        val childData: ArrayList<String>
 
         childData = data[groupPosition]
 
