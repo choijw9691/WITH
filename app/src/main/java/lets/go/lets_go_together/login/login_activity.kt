@@ -168,7 +168,7 @@ class login_activity : AppCompatActivity() {
 
 intent.putExtra("kakao_check",true)
                     startActivity(intent)
-                    finish()
+              
             }
             })
         }
